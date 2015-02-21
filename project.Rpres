@@ -39,15 +39,19 @@ stat4 <- comp_stat(nyc,Census.Correction = yint.nyc,4)
 
 save('stat1','stat2','stat3','stat4',file = 'nyc_stat.RData')
 ```
-Computing the densities
-========================================================
 
+========================================================
+## Computing the densities
 - The base R function `density` is used to estimate the densities.
 - In order to estimate the age densities by race and/or gender, `ddply` from the plyr package is used.
-
 - To take care of changing age demographics over the 1977-2012 time frame, US [census data](http://www.census.gov/) is used to weigth the density estimation. 
-
 - All these steps can be found in the `project.r` file.
+
+
+## Plotting the densities
+- shinyServer simply loads the data upon startup.
+- depending on Race and/Gender analysis picks the proper data set.
+- then plots the data with the [ggplot2](http://ggplot2.org/) package.
 
 Stat Results
 ========================================================
@@ -62,11 +66,5 @@ Stat Results
 str(stat3)
 str(stat4)
 ```
-
-Plotting of the data
-========================================================
-- shinyServer simply loads the data upon startup.
-- depending on Race and/Gender analysis picks the proper data set.
-- then plots the data with the [ggplot2](http://ggplot2.org/) package.
 
 

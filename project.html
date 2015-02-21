@@ -784,7 +784,7 @@ hljs.initHighlightingOnLoad();
   <div class="slides">
 
 <section data-state="section" data-transition="default" data-transition-speed="default">
-<h1>Developing Data Products Shiny Project</h1><p>Gabe Haarsma<br/>February 20, 2015</p>
+<h1>Developing Data Products Shiny Project</h1><p>Gabe Haarsma<br/>February 21, 2015</p>
 
 <div class="slideContent" >
 
@@ -832,13 +832,23 @@ save(&#39;stat1&#39;,&#39;stat2&#39;,&#39;stat3&#39;,&#39;stat4&#39;,file = &#39
 
 </section>
 <section data-transition="default" data-transition-speed="default">
-<h3>Computing the densities</h3>
-<div class="slideContent" >
+
+<div class="slideContent noTitle" >
+<h2>Computing the densities</h2>
+
 <ul>
 <li>The base R function <code>density</code> is used to estimate the densities.</li>
-<li><p>In order to estimate the age densities by race and/or gender, <code>ddply</code> from the plyr package is used.</p></li>
-<li><p>To take care of changing age demographics over the 1977-2012 time frame, US <a href="http://www.census.gov/">census data</a> is used to weigth the density estimation. </p></li>
-<li><p>All these steps can be found in the <code>project.r</code> file.</p></li>
+<li>In order to estimate the age densities by race and/or gender, <code>ddply</code> from the plyr package is used.</li>
+<li>To take care of changing age demographics over the 1977-2012 time frame, US <a href="http://www.census.gov/">census data</a> is used to weigth the density estimation. </li>
+<li>All these steps can be found in the <code>project.r</code> file.</li>
+</ul>
+
+<h2>Plotting the densities</h2>
+
+<ul>
+<li>shinyServer simply loads the data upon startup.</li>
+<li>depending on Race and/Gender analysis picks the proper data set.</li>
+<li>then plots the data with the <a href="http://ggplot2.org/">ggplot2</a> package.</li>
 </ul>
 
 </div>
@@ -896,18 +906,6 @@ save(&#39;stat1&#39;,&#39;stat2&#39;,&#39;stat3&#39;,&#39;stat4&#39;,file = &#39
  $ Density  : num  0.0003 0.00052 0.000934 0.001694 0.003022 ...
  $ DensityCC: num  0.000288 0.000497 0.000889 0.001608 0.002862 ...
 </code></pre>
-
-</div>
-
-</section>
-<section data-transition="default" data-transition-speed="default">
-<h3>Plotting of the data</h3>
-<div class="slideContent" >
-<ul>
-<li>shinyServer simply loads the data upon startup.</li>
-<li>depending on Race and/Gender analysis picks the proper data set.</li>
-<li>then plots the data with the <a href="http://ggplot2.org/">ggplot2</a> package.</li>
-</ul>
 
 </div>
 
